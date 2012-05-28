@@ -16,6 +16,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
@@ -32,7 +34,7 @@ if has('win32') || has('win64')
 
   " Set height and width on Windows
   set lines=60
-  set columns=140
+  set columns=150
 
   " Windows has a nasty habit of launching gVim in the wrong working directory
   cd ~
@@ -230,10 +232,10 @@ if has("autocmd")
     \| exe "normal! g`\"" | endif
 
   " Fix trailing whitespace in my most used programming langauges
-  autocmd BufWritePre *.c,cpp,h,m,mm,java,go,py,js,rb: silent! :StripTrailingWhitespaces
+  autocmd BufWritePre *.{c,cpp,h,m,mm,java,go,py,js,rb}: silent! :StripTrailingWhitespaces
 
 endif
 
-exe 'source keymap.vim'
 exe 'source plugins.vim'
+exe 'source keymap.vim'
 

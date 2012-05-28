@@ -36,7 +36,8 @@ nnoremap <silent> Q <C-w>c
 nmap ,w :StripTrailingWhitespaces<CR>
 
 " ,q to toggle quickfix window (where you have stuff like GitGrep)
-nmap <silent> ,q :cw<CR>
+nmap <silent> <leader>qo :copen<CR>
+nmap <silent> <leader>qq :cclose<CR>
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
@@ -59,62 +60,64 @@ nmap <silent> <leader>cd :lcd %:h<CR>
 " Create the directory containing the file in the buffer
 nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
-if has("gui_macvim") && has("gui_running")
-  " Map command-[ and command-] to indenting or outdenting
-  " while keeping the original selection in visual mode
-  vmap <D-]> >gv
-  vmap <D-[> <gv
+" Map command-[ and command-] to indenting or outdenting
+" while keeping the original selection in visual mode
+vmap <A-]> >gv
+vmap <A-[> <gv
 
-  nmap <D-]> >>
-  nmap <D-[> <<
+nmap <A-]> >>
+nmap <A-[> <<
 
-  omap <D-]> >>
-  omap <D-[> <<
+omap <A-]> >>
+omap <A-[> <<
 
-  imap <D-]> <Esc>>>i
-  imap <D-[> <Esc><<i
-
-  " Bubble single lines
-  nmap <D-Up> [e
-  nmap <D-Down> ]e
-  nmap <D-k> [e
-  nmap <D-j> ]e
-
-  " Bubble multiple lines
-  vmap <D-Up> [egv
-  vmap <D-Down> ]egv
-  vmap <D-k> [egv
-  vmap <D-j> ]egv
-
-else
-  " Map command-[ and command-] to indenting or outdenting
-  " while keeping the original selection in visual mode
-  vmap <A-]> >gv
-  vmap <A-[> <gv
-
-  nmap <A-]> >>
-  nmap <A-[> <<
-
-  omap <A-]> >>
-  omap <A-[> <<
-
-  imap <A-]> <Esc>>>i
-  imap <A-[> <Esc><<i
+imap <A-]> <Esc>>>i
+imap <A-[> <Esc><<i
  
-  " Bubble single lines
-  nmap <C-Up> [e
-  nmap <C-Down> ]e
-  nmap <C-k> [e
-  nmap <C-j> ]e
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+nmap <C-k> [e
+nmap <C-j> ]e
 
-  " Bubble multiple lines
-  vmap <C-Up> [egv
-  vmap <C-Down> ]egv
-  vmap <C-k> [egv
-  vmap <C-j> ]egv
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-k> [egv
+vmap <C-j> ]egv
 
-  " Make shift-insert work like in Xterm
-  map <S-Insert> <MiddleMouse>
-  map! <S-Insert> <MiddleMouse>
+" Make shift-insert work like in Xterm
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
 
-endif
+" ---------------
+" Fugitive
+" ---------------
+nmap <Leader>gc :Gcommit<CR>
+nmap <Leader>gw :Gwrite<CR>
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gp :Git push<CR>
+ " Mnemonic, gu = Git Update
+nmap <Leader>gu :Git pull<CR>
+
+
+"" ---------------
+" Ack
+" ---------------
+if has("gui_macvim") && has("gui_running")
+  " Command-Shift-F on OSX
+  map <D-F> :Ack<space>
+else
+  " Define <C-F> to a dummy value to see if it would set <C-f> as well.
+  map <C-F> :dummy
+
+  if maparg("<C-f>") == ":dummy"
+    " <leader>f on systems where <C-f> == <C-F>
+    map <leader-f> :Ack<space>
+  else
+    " <C-F> if we can still map <C-f> to <S-Down>
+    map <C-F> :Ack<space>
+  endif
+
+  map <C-f> <S-Down>
+endif 
