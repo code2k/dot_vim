@@ -18,6 +18,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'sjl/gundo.vim'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 

@@ -120,4 +120,11 @@ else
   endif
 
   map <C-f> <S-Down>
-endif 
+endif
+
+" GUndo
+nmap ,u :GundoToggle<CR>
+
+" ctrlp
+let g:ctrlp_map = '<leader>t'
+map <leader>b :CtrlPBuffer<CR>

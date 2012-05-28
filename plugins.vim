@@ -20,4 +20,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 let g:nerdtree_tabs_focus_on_files = 1
 
+" ---------------
+" Gundo
+" ---------------
+" open on the right so as not to compete with the nerdtree
+let g:gundo_right = 1 
+" a little wider for wider screens
+let g:gundo_width = 40
+
+" ---------------
+" ctrlp
+" ---------------
 
