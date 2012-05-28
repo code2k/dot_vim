@@ -24,6 +24,15 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic.git'
+Bundle 'godlygeek/tabular'
+Bundle 'Raimondi/delimitMate'
+Bundle 'gregsexton/MatchTag'
+Bundle 'MarcWeber/vim-addon-mw-utils.git'
+Bundle 'tomtom/tlib_vim.git'
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
+Bundle 'Shougo/neocomplcache'
+Bundle 'hallison/vim-markdown'
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
@@ -162,13 +171,13 @@ set complete=.,w,b,u,U
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set wildignore+=*vim/backups*
-set wildignore+=*DS_Store*
+set wildignore+=*/vim/backups*
+set wildignore+=*/DS_Store*
 set wildignore+=*.gem
-set wildignore+=log/*
-set wildignore+=tmp/*
-set wildignore+=output/*
-set wildignore+=build/*
+set wildignore+=*/log/*
+set wildignore+=*/tmp/*
+set wildignore+=*/output/*
+set wildignore+=*/build/*
 set wildignore+=*.png,*.jpg,*.gif
 
 " ================ Scrolling ========================
@@ -218,7 +227,7 @@ if has("autocmd")
   au FileType make setlocal noexpandtab
 
   " Make sure all mardown files have the correct filetype set and setup wrapping
-  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+  au BufRead,BufNewFile *.txt,*.md,*.markdown,*.mdown,*.mkd,*.mkdn,*.txt setf markdown | call s:setupWrapping()
 
   " Treat JSON files like JavaScript
   au BufNewFile,BufRead *.json set ft=javascript
@@ -235,7 +244,7 @@ if has("autocmd")
     \| exe "normal! g`\"" | endif
 
   " Fix trailing whitespace in my most used programming langauges
-  autocmd BufWritePre *.{c,cpp,h,m,mm,java,go,py,js,rb}: silent! :StripTrailingWhitespaces
+  autocmd BufWritePre *.c,*.cpp,*.h,*.m,*.mm,*.java,*.go,*.py,*.js,*.rb: silent! :StripTrailingWhitespaces
 
 endif
 

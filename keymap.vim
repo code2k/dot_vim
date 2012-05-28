@@ -7,6 +7,10 @@ nnoremap ,. '.
 map <Down> gj
 map <Up> gk
 
+" buffer next/previous
+map <silent> <leader>< :bp<CR>
+map <silent> <leader>> :bn<CR>
+
 " ctrl-opt- left/right for tab movement
 map <silent> <D-A-Left> :tabp<cr>
 map <silent> <D-A-Right> :tabn<cr>
@@ -134,6 +138,7 @@ nmap ,u :GundoToggle<CR>
 " ctrlp
 let g:ctrlp_map = '<leader>t'
 map <leader>b :CtrlPBuffer<CR>
+map <leader>r :CtrlPMRUFiles<CR>
 
 " Surround
 "
@@ -170,3 +175,19 @@ vmap <leader>{ c{<C-R>"}<ESC>
 
 " tcomment
 nmap <silent> gcp <c-_>p
+
+" ---------------
+" Tabular
+" ---------------
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t: :Tabularize /:\zs<CR>
+vmap <Leader>t: :Tabularize /:\zs<CR>
+nmap <Leader>t, :Tabularize /,\zs<CR>
+vmap <Leader>t, :Tabularize /,\zs<CR>
+nmap <Leader>t> :Tabularize /=>\zs<CR>
+vmap <Leader>t> :Tabularize /=>\zs<CR>
+nmap <Leader>t- :Tabularize /-<CR>
+vmap <Leader>t- :Tabularize /-<CR>
+nmap <Leader>t" :Tabularize /"<CR>
+vmap <Leader>t" :Tabularize /"<CR>
