@@ -16,12 +16,14 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/ZoomWin'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'sjl/gundo.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/syntastic.git'
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
@@ -161,15 +163,12 @@ set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
 set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=output/**
-set wildignore+=build/**
+set wildignore+=log/*
+set wildignore+=tmp/*
+set wildignore+=output/*
+set wildignore+=build/*
 set wildignore+=*.png,*.jpg,*.gif
 
 " ================ Scrolling ========================
@@ -240,6 +239,6 @@ if has("autocmd")
 
 endif
 
-exe 'source plugins.vim'
-exe 'source keymap.vim'
+exe 'source ~/.vim/plugins.vim'
+exe 'source ~/.vim/keymap.vim'
 

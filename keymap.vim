@@ -122,6 +122,12 @@ else
   map <C-f> <S-Down>
 endif
 
+" ---------------
+" Zoomwin
+" ---------------
+" Zoom Window to Full Size
+nmap <silent> <leader>z :ZoomWin<CR>
+
 " GUndo
 nmap ,u :GundoToggle<CR>
 
