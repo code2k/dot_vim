@@ -20,6 +20,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tomtom/tcomment_vim'
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
