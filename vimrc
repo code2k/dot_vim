@@ -12,6 +12,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -49,7 +50,12 @@ elseif has('gui_macvim')
   set columns=150
 
   " Use option (alt) as meta key.
-  set macmeta
+  "set macmeta
+
+  if has("autocmd")
+    " Automatically resize splits when resizing MacVim window
+    autocmd VimResized * wincmd =
+  endif
 endif
 
 " ---------------
@@ -166,6 +172,10 @@ set scrolloff=4         "Start scrolling when we're 4 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
+" use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
+" (it will prompt for sudo password when writing)
+cmap w!! %!sudo tee > /dev/null %
+
 "" ----------------------------------------
 "
 " Remove Trailing Whitespaces
@@ -185,27 +195,42 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
 
+" Some file types should wrap their text
+function! s:setupWrapping()
+  set wrap
+  set linebreak
+  set textwidth=80
+  set nolist
+endfunction
+
 " ----------------------------------------
 "
 " Auto Commands
 " ----------------------------------------
 
 if has("autocmd")
+  " In Makefiles, use real tabs, not tabs expanded to spaces
+  au FileType make setlocal noexpandtab
+
+  " Make sure all mardown files have the correct filetype set and setup wrapping
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+
+  " Treat JSON files like JavaScript
+  au BufNewFile,BufRead *.json set ft=javascript
+
   " No formatting on o key newlines
   autocmd BufNewFile,BufEnter * set formatoptions-=o
 
   " No more complaining about untitled documents
   autocmd FocusLost silent! :wa
 
-  " When editing a file, always jump to the last cursor position.
-  " This must be after the uncompress commands.
-  autocmd BufReadPost *
-        \ if line("'\"") > 1 && line ("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
+  " Remember last location in file, but not for commit messages.
+  " see :help last-position-jump
+  au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g`\"" | endif
 
   " Fix trailing whitespace in my most used programming langauges
-  autocmd BufWritePre *.c,*.cpp,*.h,*.m,*.mm,*.java,*.go,*.py,*.js,*.rb silent! :StripTrailingWhitespaces
+  autocmd BufWritePre *.c,cpp,h,m,mm,java,go,py,js,rb: silent! :StripTrailingWhitespaces
 
 endif
 
