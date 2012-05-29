@@ -8,14 +8,14 @@ map <Down> gj
 map <Up> gk
 
 " buffer next/previous
-map <silent> <leader>< :bp<CR>
-map <silent> <leader>> :bn<CR>
+nnoremap <silent> <leader>< :bp<CR>
+nnoremap <silent> <leader>> :bn<CR>
 
 " ctrl-opt- left/right for tab movement
-map <silent> <D-A-Left> :tabp<cr>
-imap <silent> <D-A-Left> <esc>:tabp<cr>
-map <silent> <D-A-Right> :tabn<cr>
-imap <silent> <D-A-Right> <esc>:tabn<cr>
+nnoremap <silent> <D-A-Left> :tabp<cr>
+inoremap <silent> <D-A-Left> <esc>:tabp<cr>
+nnoremap <silent> <D-A-Right> :tabn<cr>
+inoremap <silent> <D-A-Right> <esc>:tabn<cr>
 
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
@@ -24,7 +24,7 @@ nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
 " Adjust viewports to the same size
-map <Leader>= <C-w>=
+nnoremap <Leader>= <C-w>=
 
 " Resize windows with arrow keys
 nnoremap <D-S-Up> <C-w>+
@@ -33,13 +33,13 @@ nnoremap <D-S-Left> <C-w><
 nnoremap <D-S-Right>  <C-w>>
 
 " NERDTree
-noremap <leader>nn :NERDTreeMirrorToggle<CR>
+nnoremap <leader>nn :NERDTreeMirrorToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
 " Easy close windows with Q
 nnoremap <silent> Q <C-w>c
 
-nmap ,w :StripTrailingWhitespaces<CR>
+nnoremap ,w :StripTrailingWhitespaces<CR>
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
@@ -47,7 +47,7 @@ nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
 nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 
 "Clear current search highlight by double tapping //
-nmap <silent> // :nohlsearch<CR>
+nnoremap <silent> // :nohlsearch<CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
@@ -57,36 +57,36 @@ noremap ,hl :set hlsearch! hlsearch?<CR>
 nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 " cd to the directory containing the file in the buffer
-nmap <silent> <leader>cd :lcd %:h<CR>
+nnoremap <silent> <leader>cd :lcd %:h<CR>
 
 " Create the directory containing the file in the buffer
-nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
+nnoremap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
 " Map command-[ and command-] to indenting or outdenting
 " while keeping the original selection in visual mode
-vmap <A-]> >gv
-vmap <A-[> <gv
+vnoremap <A-]> >gv
+vnoremap <A-[> <gv
 
-nmap <A-]> >>
-nmap <A-[> <<
+nnoremap <A-]> >>
+nnoremap <A-[> <<
 
-omap <A-]> >>
-omap <A-[> <<
+onoremap <A-]> >>
+onoremap <A-[> <<
 
-imap <A-]> <Esc>>>i
-imap <A-[> <Esc><<i
+inoremap <A-]> <Esc>>>i
+inoremap <A-[> <Esc><<i
  
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-nmap <C-k> [e
-nmap <C-j> ]e
+nnoremap <C-Up> [e
+nnoremap <C-Down> ]e
+nnoremap <C-k> [e
+nnoremap <C-j> ]e
 
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-vmap <C-k> [egv
-vmap <C-j> ]egv
+vnoremap <C-Up> [egv
+vnoremap <C-Down> ]egv
+vnoremap <C-k> [egv
+vnoremap <C-j> ]egv
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
@@ -95,12 +95,12 @@ map! <S-Insert> <MiddleMouse>
 " ---------------
 " Fugitive
 " ---------------
-nmap <Leader>gc :Gcommit<CR>
-nmap <Leader>gw :Gwrite<CR>
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gp :Git push<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gp :Git push<CR>
  " Mnemonic, gu = Git Update
-nmap <Leader>gu :Git pull<CR>
+nnoremap <Leader>gu :Git pull<CR>
 
 
 "" ---------------
@@ -128,76 +128,79 @@ endif
 " Zoomwin
 " ---------------
 " Zoom Window to Full Size
-nmap <silent> <leader>z :ZoomWin<CR>
+nnoremap <silent> <leader>z :ZoomWin<CR>
 
 " GUndo
-nmap ,u :GundoToggle<CR>
+nnoremap ,u :GundoToggle<CR>
 
 " ctrlp
 let g:ctrlp_map = ''
-map <C-p> :CtrlP<CR>
-imap <C-p> <esc>:CtrlP<CR>
+nnoremap <C-p> :CtrlP<CR>
+inoremap <C-p> <esc>:CtrlP<CR>
 
-map <C-b> :CtrlPBuffer<CR>
-imap <C-b> <esc>:CtrlPBuffer<CR>
+nnoremap <C-b> :CtrlPBuffer<CR>
+inoremap <C-b> <esc>:CtrlPBuffer<CR>
 
-map <C-r> :CtrlPMRUFiles<CR>
-imap <C-r> <esc>:CtrlPMRUFiles<CR>
+nnoremap <C-r> :CtrlPMRUFiles<CR>
+inoremap <C-r> <esc>:CtrlPMRUFiles<CR>
 
-map <C-t> :CtrlPBufTag<CR>
-imap <C-t> <esc>:CtrlPBufTag<CR>
+nnoremap <C-t> :CtrlPBufTag<CR>
+inoremap <C-t> <esc>:CtrlPBufTag<CR>
 
 " Surround
 "
 " <leader># Surround a word with #{ruby interpolation}
-map <leader># ysiw#
-vmap <leader># c#{<C-R>"}<ESC>
+nnoremap <leader># ysiw#
+vnoremap <leader># c#{<C-R>"}<ESC>
 
 " <leader>" Surround a word with "quotes"
-map <leader>" ysiw"
-vmap <leader>" c"<C-R>""<ESC>
+nnoremap <leader>" ysiw"
+vnoremap <leader>" c"<C-R>""<ESC>
 
 " <leader>' Surround a word with 'single quotes'
-map <leader>' ysiw'
-vmap <leader>' c'<C-R>"'<ESC>
+noremap <leader>' ysiw'
+vnoremap <leader>' c'<C-R>"'<ESC>
 
 " <leader>) or <leader>( Surround a word with (parens)
 " The difference is in whether a space is put in
-map <leader>( ysiw(
-map <leader>) ysiw)
-vmap <leader>( c( <C-R>" )<ESC>
-vmap <leader>) c(<C-R>")<ESC>
+nnoremap <leader>( ysiw(
+nnoremap <leader>) ysiw)
+vnoremap <leader>( c( <C-R>" )<ESC>
+vnoremap <leader>) c(<C-R>")<ESC>
 
 " <leader>[ Surround a word with [brackets]
-map <leader>] ysiw]
-map <leader>[ ysiw[
-vmap <leader>[ c[ <C-R>" ]<ESC>
-vmap <leader>] c[<C-R>"]<ESC>
+nnoremap <leader>] ysiw]
+nnoremap <leader>[ ysiw[
+vnoremap <leader>[ c[ <C-R>" ]<ESC>
+vnoremap <leader>] c[<C-R>"]<ESC>
 
 " <leader>{ Surround a word with {braces}
-map <leader>} ysiw}
-map <leader>{ ysiw{
-vmap <leader>} c{ <C-R>" }<ESC>
-vmap <leader>{ c{<C-R>"}<ESC>
+nnoremap <leader>} ysiw}
+nnoremap <leader>{ ysiw{
+vnoremap <leader>} c{ <C-R>" }<ESC>
+vnoremap <leader>{ c{<C-R>"}<ESC>
 
 " ---------------
 " Tabular
 " ---------------
-nmap <Leader>t= :Tabularize /=<CR>
-vmap <Leader>t= :Tabularize /=<CR>
-nmap <Leader>t: :Tabularize /:\zs<CR>
-vmap <Leader>t: :Tabularize /:\zs<CR>
-nmap <Leader>t, :Tabularize /,\zs<CR>
-vmap <Leader>t, :Tabularize /,\zs<CR>
-nmap <Leader>t> :Tabularize /=>\zs<CR>
-vmap <Leader>t> :Tabularize /=>\zs<CR>
-nmap <Leader>t- :Tabularize /-<CR>
-vmap <Leader>t- :Tabularize /-<CR>
-nmap <Leader>t" :Tabularize /"<CR>
-vmap <Leader>t" :Tabularize /"<CR>
+nnoremap <Leader>t= :Tabularize /=<CR>
+vnoremap <Leader>t= :Tabularize /=<CR>
+nnoremap <Leader>t: :Tabularize /:\zs<CR>
+vnoremap <Leader>t: :Tabularize /:\zs<CR>
+nnoremap <Leader>t, :Tabularize /,\zs<CR>
+vnoremap <Leader>t, :Tabularize /,\zs<CR>
+nnoremap <Leader>t> :Tabularize /=>\zs<CR>
+vnoremap <Leader>t> :Tabularize /=>\zs<CR>
+nnoremap <Leader>t- :Tabularize /-<CR>
+vnoremap <Leader>t- :Tabularize /-<CR>
+nnoremap <Leader>t" :Tabularize /"<CR>
+vnoremap <Leader>t" :Tabularize /"<CR>
 
 " ---------------
 " Tagbar toggle
 " o=outline
 " ---------------
-nmap <Leader>o :TagbarToggle<CR>
+nnoremap <Leader>o :TagbarToggle<CR>
+
+" neocomplcache activation
+inoremap <C-Space> <C-n>

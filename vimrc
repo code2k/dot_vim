@@ -99,7 +99,7 @@ elseif has('gui_macvim')
 endif
 
 " ---------------
-" np swap/backup
+" no swap/backup
 " ---------------
 set noswapfile
 set nobackup
@@ -138,7 +138,7 @@ set wildmenu           " Turn on WiLd menu
 set hidden             " Change buffer - without saving
 set history=768        " Number of things to remember in history.
 set cf                 " Enable error files & error jumping.
-set clipboard+=unnamed " Yanks go on clipboard instead.
+"set clipboard+=unnamed " Yanks go on clipboard instead.
 set autowrite          " Writes on make/shell commands
 set timeoutlen=350     " Time to wait for a command (after leader for example)
 set foldlevelstart=99  " Remove folds
@@ -211,8 +211,7 @@ set sidescroll=1
 " (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
 
-"" ----------------------------------------
-"
+" ----------------------------------------
 " Remove Trailing Whitespaces
 " ----------------------------------------
 " via: http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
@@ -239,7 +238,6 @@ function! s:setupWrapping()
 endfunction
 
 " ----------------------------------------
-"
 " Auto Commands
 " ----------------------------------------
 
