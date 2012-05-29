@@ -1,2 +1,2 @@
 " mute bell again after gui start
-set t_vb=
+set vb t_vb

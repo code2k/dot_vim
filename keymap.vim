@@ -39,10 +39,6 @@ nnoremap <silent> Q <C-w>c
 
 nmap ,w :StripTrailingWhitespaces<CR>
 
-" ,q to toggle quickfix window (where you have stuff like GitGrep)
-nmap <silent> <leader>qo :copen<CR>
-nmap <silent> <leader>qq :cclose<CR>
-
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
 nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
@@ -173,9 +169,6 @@ map <leader>{ ysiw{
 vmap <leader>} c{ <C-R>" }<ESC>
 vmap <leader>{ c{<C-R>"}<ESC>
 
-" tcomment
-nmap <silent> gcp <c-_>p
-
 " ---------------
 " Tabular
 " ---------------
@@ -191,3 +184,9 @@ nmap <Leader>t- :Tabularize /-<CR>
 vmap <Leader>t- :Tabularize /-<CR>
 nmap <Leader>t" :Tabularize /"<CR>
 vmap <Leader>t" :Tabularize /"<CR>
+
+" ---------------
+" Tagbar toggle
+" o=outline
+" ---------------
+nmap <Leader>o :TagbarToggle<CR>

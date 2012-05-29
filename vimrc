@@ -16,12 +16,16 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'christoomey/vim-space'
+Bundle 'henrik/vim-indexed-search'
+Bundle 'milkypostman/vim-togglelist'
+Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tomtom/tcomment_vim'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'godlygeek/tabular'
@@ -33,6 +37,23 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'Shougo/neocomplcache'
 Bundle 'hallison/vim-markdown'
+
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rake'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mmalecki/vim-node.js'
+Bundle 'leshill/vim-json'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'msanders/cocoa.vim'
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Bundle 'hallison/vim-markdown'
+Bundle 'matchit.zip'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-indent'
+Bundle 'tpope/vim-repeat'
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
@@ -154,7 +175,7 @@ set matchtime=2 " How many tenths of a second to blink
 " Sounds
 " ---------------
 set noerrorbells
-set novisualbell
+set visualbell
 set t_vb=
 
 " ---------------

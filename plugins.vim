@@ -13,7 +13,7 @@ call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 " NERDTree
 " ---------------
 let NERDTreeShowBookmarks=1
-let NERDTreeMinimalUI = 1 
+let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
 let g:nerdtree_tabs_open_on_gui_startup = 1
@@ -28,7 +28,7 @@ augroup AuNERDTreeCmd
 autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
 
 " NERDTree utility function
-function s:UpdateNERDTree(...)
+function! s:UpdateNERDTree(...)
   let stay = 0
 
   if(exists("a:1"))
@@ -51,12 +51,12 @@ endfunction
 " Gundo
 " ---------------
 " open on the right so as not to compete with the nerdtree
-let g:gundo_right = 1 
+let g:gundo_right = 1
 " a little wider for wider screens
 let g:gundo_width = 40
 
 " ---------------
-" syntastic 
+" syntastic
 " ---------------
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=0
@@ -79,7 +79,7 @@ let g:neocomplcache_auto_completion_start_length = 3
 " Map standard Ctrl-N completion to Cmd-Space
 " inoremap <<D-Space> <C-n>
 
-" This makes sure we use neocomplcache completefunc instead of 
+" This makes sure we use neocomplcache completefunc instead of
 " the one in rails.vim, otherwise this plugin will crap out
 let g:neocomplcache_force_overwrite_completefunc = 1
 
@@ -101,4 +101,8 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+"---------------
+"Tagbar
+let g:tagbar_width=30
 
