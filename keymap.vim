@@ -120,8 +120,8 @@ inoremap <C-p> <esc>:CtrlP<CR>
 nnoremap <C-b> :CtrlPBuffer<CR>
 inoremap <C-b> <esc>:CtrlPBuffer<CR>
 
-nnoremap <C-m> :CtrlPMRUFiles<CR>
-inoremap <C-m> <esc>:CtrlPMRUFiles<CR>
+nnoremap <C-l> :CtrlPMRUFiles<CR>
+inoremap <C-l> <esc>:CtrlPMRUFiles<CR>
 
 nnoremap <C-t> :CtrlPBufTag<CR>
 inoremap <C-t> <esc>:CtrlPBufTag<CR>
