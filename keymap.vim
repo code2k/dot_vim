@@ -57,44 +57,28 @@ noremap ,hl :set hlsearch! hlsearch?<CR>
 nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 " cd to the directory containing the file in the buffer
-nnoremap <silent> <leader>cd :lcd %:h<CR>
+map <silent> <leader>cd :lcd %:h<CR>
 
 " Create the directory containing the file in the buffer
-nnoremap <silent> <leader>md :!mkdir -p %:p:h<CR>
+map <silent> <leader>md :!mkdir -p %:p:h<CR>
 
-" Map command-[ and command-] to indenting or outdenting
-" while keeping the original selection in visual mode
-vnoremap <A-]> >gv
-vnoremap <A-[> <gv
-
-nnoremap <A-]> >>
-nnoremap <A-[> <<
-
-onoremap <A-]> >>
-onoremap <A-[> <<
-
-inoremap <A-]> <Esc>>>i
-inoremap <A-[> <Esc><<i
- 
 " Bubble single lines
-nnoremap <C-Up> [e
-nnoremap <C-Down> ]e
-nnoremap <C-k> [e
-nnoremap <C-j> ]e
+nmap <C-Up> [e
+nmap <C-Down> ]e
+nmap <C-k> [e
+nmap <C-j> ]e
 
 " Bubble multiple lines
-vnoremap <C-Up> [egv
-vnoremap <C-Down> ]egv
-vnoremap <C-k> [egv
-vnoremap <C-j> ]egv
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-k> [egv
+vmap <C-j> ]egv
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
-" ---------------
 " Fugitive
-" ---------------
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gs :Gstatus<CR>
@@ -103,9 +87,7 @@ nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>gu :Git pull<CR>
 
 
-"" ---------------
 " Ack
-" ---------------
 if has("gui_macvim") && has("gui_running")
   " Command-Shift-F on OSX
   map <D-F> :Ack<space>
@@ -124,9 +106,6 @@ else
   map <C-f> <S-Down>
 endif
 
-" ---------------
-" Zoomwin
-" ---------------
 " Zoom Window to Full Size
 nnoremap <silent> <leader>z :ZoomWin<CR>
 
@@ -141,48 +120,45 @@ inoremap <C-p> <esc>:CtrlP<CR>
 nnoremap <C-b> :CtrlPBuffer<CR>
 inoremap <C-b> <esc>:CtrlPBuffer<CR>
 
-nnoremap <C-r> :CtrlPMRUFiles<CR>
-inoremap <C-r> <esc>:CtrlPMRUFiles<CR>
+nnoremap <C-m> :CtrlPMRUFiles<CR>
+inoremap <C-m> <esc>:CtrlPMRUFiles<CR>
 
 nnoremap <C-t> :CtrlPBufTag<CR>
 inoremap <C-t> <esc>:CtrlPBufTag<CR>
 
 " Surround
-"
 " <leader># Surround a word with #{ruby interpolation}
-nnoremap <leader># ysiw#
-vnoremap <leader># c#{<C-R>"}<ESC>
+map <leader># ysiw#
+vmap <leader># c#{<C-R>"}<ESC>
 
 " <leader>" Surround a word with "quotes"
-nnoremap <leader>" ysiw"
-vnoremap <leader>" c"<C-R>""<ESC>
+map <leader>" ysiw"
+vmap <leader>" c"<C-R>""<ESC>
 
 " <leader>' Surround a word with 'single quotes'
-noremap <leader>' ysiw'
-vnoremap <leader>' c'<C-R>"'<ESC>
+map <leader>' ysiw'
+vmap <leader>' c'<C-R>"'<ESC>
 
 " <leader>) or <leader>( Surround a word with (parens)
 " The difference is in whether a space is put in
-nnoremap <leader>( ysiw(
-nnoremap <leader>) ysiw)
-vnoremap <leader>( c( <C-R>" )<ESC>
-vnoremap <leader>) c(<C-R>")<ESC>
+map <leader>( ysiw(
+map <leader>) ysiw)
+vmap <leader>( c( <C-R>" )<ESC>
+vmap <leader>) c(<C-R>")<ESC>
 
 " <leader>[ Surround a word with [brackets]
-nnoremap <leader>] ysiw]
-nnoremap <leader>[ ysiw[
-vnoremap <leader>[ c[ <C-R>" ]<ESC>
-vnoremap <leader>] c[<C-R>"]<ESC>
+map <leader>] ysiw]
+map <leader>[ ysiw[
+vmap <leader>[ c[ <C-R>" ]<ESC>
+vmap <leader>] c[<C-R>"]<ESC>
 
 " <leader>{ Surround a word with {braces}
-nnoremap <leader>} ysiw}
-nnoremap <leader>{ ysiw{
-vnoremap <leader>} c{ <C-R>" }<ESC>
-vnoremap <leader>{ c{<C-R>"}<ESC>
+map <leader>} ysiw}
+map <leader>{ ysiw{
+vmap <leader>} c{ <C-R>" }<ESC>
+vmap <leader>{ c{<C-R>"}<ESC>
 
-" ---------------
 " Tabular
-" ---------------
 nnoremap <Leader>t= :Tabularize /=<CR>
 vnoremap <Leader>t= :Tabularize /=<CR>
 nnoremap <Leader>t: :Tabularize /:\zs<CR>
@@ -196,10 +172,8 @@ vnoremap <Leader>t- :Tabularize /-<CR>
 nnoremap <Leader>t" :Tabularize /"<CR>
 vnoremap <Leader>t" :Tabularize /"<CR>
 
-" ---------------
 " Tagbar toggle
 " o=outline
-" ---------------
 nnoremap <Leader>o :TagbarToggle<CR>
 
 " neocomplcache activation
