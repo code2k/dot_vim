@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo "Installing vundle"
-git submodule init
-git submodule update
+git clone https://github.com/gmarik/vundle.git bundle/vundle
 
 echo "Initialize vim"
 vim +BundleInstall +qall
