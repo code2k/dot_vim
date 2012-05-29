@@ -13,7 +13,9 @@ map <silent> <leader>> :bn<CR>
 
 " ctrl-opt- left/right for tab movement
 map <silent> <D-A-Left> :tabp<cr>
+imap <silent> <D-A-Left> <esc>:tabp<cr>
 map <silent> <D-A-Right> :tabn<cr>
+imap <silent> <D-A-Right> <esc>:tabn<cr>
 
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
@@ -132,9 +134,18 @@ nmap <silent> <leader>z :ZoomWin<CR>
 nmap ,u :GundoToggle<CR>
 
 " ctrlp
-let g:ctrlp_map = '<leader>t'
-map <leader>b :CtrlPBuffer<CR>
-map <leader>r :CtrlPMRUFiles<CR>
+let g:ctrlp_map = ''
+map <C-p> :CtrlP<CR>
+imap <C-p> <esc>:CtrlP<CR>
+
+map <C-b> :CtrlPBuffer<CR>
+imap <C-b> <esc>:CtrlPBuffer<CR>
+
+map <C-r> :CtrlPMRUFiles<CR>
+imap <C-r> <esc>:CtrlPMRUFiles<CR>
+
+map <C-t> :CtrlPBufTag<CR>
+imap <C-t> <esc>:CtrlPBufTag<CR>
 
 " Surround
 "

@@ -24,28 +24,20 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Open a NERDTree automatically when vim starts up without any files ...
 autocmd vimenter * if !argc() | NERDTree | endif
-augroup AuNERDTreeCmd
-autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
 
-" NERDTree utility function
-function! s:UpdateNERDTree(...)
-  let stay = 0
+" ---------------
+" bclose
+" ---------------
+cmap bd Bclose
 
-  if(exists("a:1"))
-    let stay = a:1
-  end
-
-  if exists("t:NERDTreeBufName")
-    let nr = bufwinnr(t:NERDTreeBufName)
-    if nr != -1
-      exe nr . "wincmd w"
-      exe substitute(mapcheck("R"), "<CR>", "", "")
-      if !stay
-        wincmd p
-      end
-    endif
-  endif
-endfunction
+" ---------------
+" CtrlP
+" ---------------
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  'output$\|build$\|tmp$\|log$\|\.git$\|\.hg$\|\.svn$',
+      \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$',
+      \ }
 
 " ---------------
 " Gundo

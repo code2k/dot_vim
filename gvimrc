@@ -1,2 +1,3 @@
 " mute bell again after gui start
-set vb t_vb
+set visualbell
+set t_vb=

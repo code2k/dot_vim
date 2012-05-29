@@ -12,32 +12,37 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-unimpaired'
+Bundle 'MarcWeber/vim-addon-mw-utils.git'
+Bundle 'tomtom/tlib_vim.git'
+Bundle 'kana/vim-textobj-user'
+
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'christoomey/vim-space'
+Bundle 'kien/ctrlp.vim'
 Bundle 'henrik/vim-indexed-search'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'majutsushi/tagbar'
-Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'rwfitzge/vim-bclose'
+Bundle 'tpope/vim-repeat'
+Bundle 'christoomey/vim-space'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'edsono/vim-matchit'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-surround'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'godlygeek/tabular'
-Bundle 'Raimondi/delimitMate'
-Bundle 'gregsexton/MatchTag'
-Bundle 'MarcWeber/vim-addon-mw-utils.git'
-Bundle 'tomtom/tlib_vim.git'
 Bundle 'honza/snipmate-snippets'
+Bundle 'gregsexton/MatchTag'
 Bundle 'garbas/vim-snipmate'
 Bundle 'Shougo/neocomplcache'
-Bundle 'hallison/vim-markdown'
 
+Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
@@ -49,11 +54,8 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'msanders/cocoa.vim'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'hallison/vim-markdown'
-Bundle 'matchit.zip'
-Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-indent'
-Bundle 'tpope/vim-repeat'
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
@@ -110,6 +112,8 @@ set t_Co=256
 let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 
 " ---------------
 " UI
@@ -195,10 +199,6 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*/vim/backups*
 set wildignore+=*/DS_Store*
 set wildignore+=*.gem
-set wildignore+=*/log/*
-set wildignore+=*/tmp/*
-set wildignore+=*/output/*
-set wildignore+=*/build/*
 set wildignore+=*.png,*.jpg,*.gif
 
 " ================ Scrolling ========================
@@ -272,3 +272,14 @@ endif
 exe 'source ~/.vim/plugins.vim'
 exe 'source ~/.vim/keymap.vim'
 
+" Use local vimrc if available
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+" Use local gvimrc if available and gui is running
+if has('gui_running')
+  if filereadable(expand("~/.gvimrc.local"))
+    source ~/.gvimrc.local
+  endif
+endif
