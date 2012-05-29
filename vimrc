@@ -235,6 +235,7 @@ function! s:setupWrapping()
   set linebreak
   set textwidth=80
   set nolist
+  setl spell
 endfunction
 
 " ----------------------------------------
