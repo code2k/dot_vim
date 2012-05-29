@@ -14,6 +14,6 @@ If you need to modify this configuration just add a `.vimrc.local` or/and
 
 This vim configuration is a mix from the following excellent configurations:
 
-- [The Vim Configuration of Champions](https://github.com/mutewinter/dot_vim)]
+- [The Vim Configuration of Champions](https://github.com/mutewinter/dot_vim)
 - [Janus](https://github.com/carlhuda/janus)
 - [YADR](https://github.com/skwp/dotfiles)
