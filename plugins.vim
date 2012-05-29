@@ -35,7 +35,7 @@ cmap bd Bclose
 " ---------------
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  'output$\|build$\|tmp$\|log$\|\.git$\|\.hg$\|\.svn$',
+      \ 'dir':  '\/log$\|\/output$\|\/build$\|\.git$\|\.hg$\|\.svn$',
       \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$',
       \ }
 
