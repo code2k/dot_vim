@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. `git clone http://github.com/code2klabs/dot_vim.git .git` into your home
+1. `git clone http://github.com/code2k/dot_vim.git .vim` into your home
    folder.
 2. `cd .vim`
 3. `./bootstap.sh` (ignore the initial vim error)
