@@ -82,7 +82,7 @@ elseif has('gui_macvim')
 
   " Custom font for Powerline
   " From: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
-  set guifont=DejaVu\ Sans\Mono\ for\ Powerline:h12
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 
   " Hide Toolbar in MacVim
   set guioptions=egmt
