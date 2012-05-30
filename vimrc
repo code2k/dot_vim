@@ -15,6 +15,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'MarcWeber/vim-addon-mw-utils.git'
 Bundle 'tomtom/tlib_vim.git'
 Bundle 'kana/vim-textobj-user'
+Bundle 'tpope/vim-eunuch'
 
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
@@ -209,7 +210,7 @@ set sidescroll=1
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 " (it will prompt for sudo password when writing)
-cmap w!! %!sudo tee > /dev/null %
+cmap w!! SudoWrite
 
 " ----------------------------------------
 " Remove Trailing Whitespaces
