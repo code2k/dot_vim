@@ -114,7 +114,7 @@ let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
 let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+let g:solarized_visibility="normal"
 
 " ---------------
 " UI
