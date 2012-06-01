@@ -288,6 +288,9 @@ if has("autocmd")
   " Fix trailing whitespace in my most used programming langauges
   autocmd BufWritePre *.c,*.cpp,*.h,*.m,*.mm,*.java,*.go,*.py,*.js,*.rb: silent! :StripTrailingWhitespaces
 
+  " If the only cmdline argument is a directory, change into it at start
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv(0)) | exe "silent! cd ".argv(0) | endif
+
 endif
 
 exe 'source ~/.vim/plugins.vim'
