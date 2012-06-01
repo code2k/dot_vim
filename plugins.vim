@@ -16,7 +16,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
-let g:nerdtree_tabs_open_on_gui_startup = 1
+let NERDTreeQuitOnOpen = 1
+let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_focus_on_files = 1
 
 " close vim if the only window left open is a NERDTree
@@ -38,6 +39,10 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\/log$\|\/output$\|\/build$\|\.git$\|\.hg$\|\.svn$',
       \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$',
       \ }
+ let g:ctrlp_prompt_mappings = {
+       \ 'AcceptSelection("h")': ['<c-x>', '<c-s>'],
+       \ 'AcceptSelection("t")': ['<c-t>', '<c-cr>'],
+       \ }
 
 " ---------------
 " Gundo
@@ -64,6 +69,7 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_max_list = 20
 let g:neocomplcache_disable_auto_complete = 1
+set completeopt+=longest
 
 " Map standard Ctrl-N completion to Cmd-Space
 " inoremap <<D-Space> <C-n>
@@ -93,5 +99,5 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 "---------------
 "Tagbar
-let g:tagbar_width=30
+let g:tagbar_width=40
 

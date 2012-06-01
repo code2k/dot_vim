@@ -72,8 +72,8 @@ if has('win32') || has('win64')
   set guioptions-=m " Menubar
 
   " Set height and width on Windows
-  set lines=60
-  set columns=150
+  set lines=55
+  set columns=130
 
   " Windows has a nasty habit of launching gVim in the wrong working directory
   cd ~
@@ -88,7 +88,7 @@ elseif has('gui_macvim')
   set guioptions=egmt
 
   set lines=60
-  set columns=150
+  set columns=140
 
   " Use option (alt) as meta key.
   "set macmeta
@@ -123,25 +123,46 @@ set ruler          " Ruler on
 set nu             " Line numbers on
 set nowrap         " Line wrapping off
 set laststatus=2   " Always show the statusline
-set cmdheight=2    " Make the command area two lines high
+"set cmdheight=2    " Make the command area two lines high
 set gcr=a:blinkon0              "Disable cursor blink
 set encoding=utf-8
 if exists('+colorcolumn')
   set colorcolumn=80 " Color the 80th column differently
 endif
 
+function! <SID>setupColors()
+  hi! link txtBold Identifier
+  hi! link zshVariableDef Identifier
+  hi! link zshFunction Function
+  hi! link rubyControl Statement
+  hi! link rspecGroupMethods rubyControl
+  hi! link rspecMocks Identifier
+  hi! link rspecKeywords Identifier
+  hi! link rubyLocalVariableOrMethod Normal
+  hi! link rubyStringDelimiter Constant
+  hi! link rubyString Constant
+  hi! link rubyAccess Todo
+  hi! link rubySymbol Identifier
+  hi! link rubyPseudoVariable Type
+  hi! link rubyRailsARAssociationMethod Title
+  hi! link rubyRailsARValidationMethod Title
+  hi! link rubyRailsMethod Title
+  hi! link MatchParen DiffText
+  hi! link WildMenu DiffText
+endfunction
+autocmd VimEnter * call <SID>setupColors()
+
 " ---------------
 " Behaviors
 " ---------------
 syntax enable
 set autoread           " Automatically reload changes if detected
-set wildmenu           " Turn on WiLd menu
 set hidden             " Change buffer - without saving
 set history=768        " Number of things to remember in history.
 set cf                 " Enable error files & error jumping.
 "set clipboard+=unnamed " Yanks go on clipboard instead.
 set autowrite          " Writes on make/shell commands
-set timeoutlen=350     " Time to wait for a command (after leader for example)
+set timeoutlen=500     " Time to wait for a command (after leader for example)
 set foldlevelstart=99  " Remove folds
 set formatoptions=crql
 set iskeyword+=$,@     " Add extra characters that are valid parts of variables
@@ -194,7 +215,7 @@ set complete=.,w,b,u,U
 
 " ================ Completion =======================
 
-set wildmode=list:longest
+set wildmode=list:longest,full
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*/vim/backups*
