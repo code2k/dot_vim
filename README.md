@@ -46,6 +46,7 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 - [vim-markdown](https://github.com/hallison/vim-markdown)
 - [vim-ruby](https://github.com/vim-ruby/vim-ruby)
 - [vim-endwise](https://github.com/tpope/vim-endwise)
+- [vim-rvm](https://github.com/tpope/vim-rvm)
 - [vim-haml](https://github.com/tpope/vim-haml)
 - [vim-rake](https://github.com/tpope/vim-rake)
 - [vim-javascript](https://github.com/pangloss/vim-javascript)

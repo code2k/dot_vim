@@ -292,6 +292,8 @@ if has("autocmd")
   " If the only cmdline argument is a directory, change into it at start
   autocmd VimEnter * if argc() == 1 && isdirectory(argv(0)) | exe "silent! cd ".argv(0) | endif
 
+  " if rvm configuration exists, change used ruby and gemset using Rvm
+  autocmd VimEnter * if filereadable(expand("./.rvmrc")) | Rvm | endif
 endif
 
 exe 'source ~/.vim/plugins.vim'
