@@ -18,8 +18,6 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'tpope/vim-eunuch'
 
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'kien/ctrlp.vim'
 Bundle 'henrik/vim-indexed-search'
 Bundle 'milkypostman/vim-togglelist'
@@ -47,15 +45,18 @@ Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rvm'
-Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rake'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'beatlog/vim-gocode'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mmalecki/vim-node.js'
 Bundle 'leshill/vim-json'
+Bundle 'mattn/zencoding-vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'skammer/vim-css-color'
+Bundle 'groenewege/vim-less'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'msanders/cocoa.vim'
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Bundle 'hallison/vim-markdown'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-indent'
 
@@ -127,9 +128,6 @@ set laststatus=2   " Always show the statusline
 "set cmdheight=2    " Make the command area two lines high
 set gcr=a:blinkon0              "Disable cursor blink
 set encoding=utf-8
-if exists('+colorcolumn')
-  set colorcolumn=80 " Color the 80th column differently
-endif
 
 function! <SID>setupColors()
   hi! link txtBold Identifier
@@ -178,7 +176,6 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
-set backspace=2
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -259,6 +256,9 @@ function! s:setupWrapping()
   set textwidth=80
   set nolist
   setl spell
+  if exists('+colorcolumn')
+    setl colorcolumn=80 " Color the 80th column differently
+  endif
 endfunction
 
 " ----------------------------------------

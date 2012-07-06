@@ -32,10 +32,6 @@ nnoremap <D-S-Down> <C-w>-
 nnoremap <D-S-Left> <C-w><
 nnoremap <D-S-Right>  <C-w>>
 
-" NERDTree
-nnoremap <leader>nn :NERDTreeMirrorToggle<CR>
-nnoremap <leader>nf :NERDTreeFind<CR>
-
 " Easy close windows with Q
 nnoremap <silent> Q <C-w>c
 
@@ -85,7 +81,6 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gp :Git push<CR>
  " Mnemonic, gu = Git Update
 nnoremap <Leader>gu :Git pull<CR>
-
 
 " Ack
 if has("gui_macvim") && has("gui_running")

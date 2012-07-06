@@ -10,23 +10,6 @@ endif
 call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 " ---------------
-" NERDTree
-" ---------------
-let NERDTreeShowBookmarks=1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
-let NERDTreeQuitOnOpen = 1
-let g:nerdtree_tabs_open_on_gui_startup = 0
-let g:nerdtree_tabs_focus_on_files = 1
-
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Open a NERDTree automatically when vim starts up without any files ...
-autocmd vimenter * if !argc() | NERDTree | endif
-
-" ---------------
 " bclose
 " ---------------
 cmap bd Bclose
@@ -96,6 +79,7 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.go = '\h\w*\%.'
 
 "---------------
 "Tagbar
