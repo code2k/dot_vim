@@ -172,4 +172,8 @@ vnoremap <Leader>t" :Tabularize /"<CR>
 nnoremap <Leader>o :TagbarToggle<CR>
 
 " neocomplcache activation
-inoremap <C-Space> <C-n>
+inoremap <expr> <c-space> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>"
+inoremap <expr><c-CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+

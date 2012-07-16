@@ -48,18 +48,15 @@ let g:syntastic_auto_loc_list=2
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_fuzzy_completion = 0
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_max_list = 20
-let g:neocomplcache_disable_auto_complete = 1
-set completeopt+=longest
-
-" Map standard Ctrl-N completion to Cmd-Space
-" inoremap <<D-Space> <C-n>
-
-" This makes sure we use neocomplcache completefunc instead of
-" the one in rails.vim, otherwise this plugin will crap out
-let g:neocomplcache_force_overwrite_completefunc = 1
+"let g:neocomplcache_disable_auto_complete = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_auto_completion_start_length = 2
+let g:neocomplcache_manual_completion_start_length = 0
+let g:neocomplcache_enable_auto_delimiter = 1
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
@@ -67,8 +64,10 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
+"let g:neocomplcache_snippets_dir = $HOME . '/bundle/vim-snippets'
+
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType css,less setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -80,6 +79,7 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.go = '\h\w*\%.'
+let g:neocomplcache_omni_patterns.less = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
 
 "---------------
 "Tagbar

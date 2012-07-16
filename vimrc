@@ -39,7 +39,9 @@ Bundle 'godlygeek/tabular'
 Bundle 'honza/snipmate-snippets'
 Bundle 'gregsexton/MatchTag'
 Bundle 'garbas/vim-snipmate'
+Bundle 'honza/snipmate-snippets'
 Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache-snippets-complete'
 
 Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
@@ -310,3 +312,4 @@ if has('gui_running')
     source ~/.gvimrc.local
   endif
 endif
+
