@@ -35,7 +35,9 @@ nnoremap <D-S-Right>  <C-w>>
 " Easy close windows with Q
 nnoremap <silent> Q <C-w>c
 
-nnoremap ,w :StripTrailingWhitespaces<CR>
+nnoremap <leader>w :StripTrailingWhitespaces<CR>
+" reindent complete file without losing position
+nnoremap <leader>f mqHmwgg=G`wzt`q
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
@@ -173,7 +175,7 @@ nnoremap <Leader>o :TagbarToggle<CR>
 
 " neocomplcache activation
 inoremap <expr> <c-space> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>"
-inoremap <expr><c-CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><c-CR> neocomplcache#smart_close_popup() . "\<CR>"
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 

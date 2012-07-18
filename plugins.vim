@@ -66,6 +66,11 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 "let g:neocomplcache_snippets_dir = $HOME . '/bundle/vim-snippets'
 
+" ruby omni completion fix
+" http://osdir.com/ml/editors.vim.vim-ruby.devel/2007-02/msg00008.html
+if has("ruby")
+  silent! ruby nil
+endif
 " Enable omni completion.
 autocmd FileType css,less setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
