@@ -129,7 +129,7 @@ set laststatus=2   " Always show the statusline
 "set cmdheight=2    " Make the command area two lines high
 set gcr=a:blinkon0              "Disable cursor blink
 set encoding=utf-8
-let g:netrw_liststyle= 4 " tree
+let g:netrw_liststyle = 3 " tree
 
 function! <SID>setupColors()
   hi! link txtBold Identifier
