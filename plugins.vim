@@ -125,3 +125,5 @@ let g:tagbar_type_objc = {
     \ }
 \ }
 
+" delimitMate
+let delimitMate_expand_cr = 1
