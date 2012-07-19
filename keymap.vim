@@ -3,6 +3,10 @@ let mapleader=","
 "Go to last edit location with ,.
 nnoremap ,. '.
 
+" CMD-Enter to enter new line, doesn't work in terminal
+inoremap <D-Enter> <C-o>o
+inoremap <D-S-Enter> <C-o>O
+
 " Map the arrow keys to be based on display lines, not physical lines
 map <Down> gj
 map <Up> gk
