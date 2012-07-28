@@ -19,7 +19,7 @@ cmap bd Bclose
 " ---------------
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\/log$\|\/output$\|\/build$\|\.git$\|\.hg$\|\.svn$',
+      \ 'dir':  '\/log$\|\/output$\|\/build$\|\/node-modules$\|\.git$\|\.hg$\|\.svn$',
       \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$',
       \ }
  let g:ctrlp_prompt_mappings = {
