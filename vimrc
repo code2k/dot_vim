@@ -50,6 +50,7 @@ Bundle 'tpope/vim-rake'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'beatlog/vim-gocode'
 Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmalecki/vim-node.js'
 Bundle 'leshill/vim-json'
 Bundle 'mattn/zencoding-vim'
@@ -130,9 +131,10 @@ set ruler          " Ruler on
 set nu             " Line numbers on
 set nowrap         " Line wrapping off
 set laststatus=2   " Always show the statusline
-"set cmdheight=2    " Make the command area two lines high
+set cmdheight=2    " Make the command area two lines high
 set gcr=a:blinkon0              "Disable cursor blink
 set encoding=utf-8
+set cursorline
 let g:netrw_liststyle = 3 " tree
 
 function! <SID>setupColors()
