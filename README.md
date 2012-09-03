@@ -14,6 +14,7 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 
 - [vundle](https://github.com/gmarik/vundle)
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+- [vitality.vim](https://github.com/sjl/vitality.vim)
 - [vim-addon-mw-utils.git](https://github.com/MarcWeber/vim-addon-mw-utils.git)
 - [tlib_vim.git](https://github.com/tomtom/tlib_vim.git)
 - [vim-textobj-user](https://github.com/kana/vim-textobj-user)
@@ -48,7 +49,10 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 - [vim-rake](https://github.com/tpope/vim-rake)
 - [vim-golang](https://github.com/jnwhiteh/vim-golang)
 - [vim-gocode](https://github.com/beatlog/vim-gocode)
+- [html5.vim](https://github.com/othree/html5.vim)
 - [vim-javascript](https://github.com/pangloss/vim-javascript)
+- [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
+- [vim-handlebars](https://github.com/nono/vim-handlebars)
 - [vim-node.js](https://github.com/mmalecki/vim-node.js)
 - [vim-json](https://github.com/leshill/vim-json)
 - [zencoding-vim](https://github.com/mattn/zencoding-vim)
