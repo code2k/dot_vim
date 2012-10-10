@@ -132,7 +132,7 @@ let g:solarized_visibility="normal"
 " ---------------
 set ruler          " Ruler on
 set nu             " Line numbers on
-set nowrap         " Line wrapping off
+set wrap           " Line wrapping on
 set laststatus=2   " Always show the statusline
 set cmdheight=2    " Make the command area two lines high
 set gcr=a:blinkon0              "Disable cursor blink
