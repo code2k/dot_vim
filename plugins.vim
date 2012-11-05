@@ -17,15 +17,15 @@ cmap bd Bclose
 " ---------------
 " CtrlP
 " ---------------
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\/log$\|\/output$\|\/build$\|\/node-modules$\|\.git$\|\.hg$\|\.svn$',
       \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$',
       \ }
- let g:ctrlp_prompt_mappings = {
-       \ 'AcceptSelection("h")': ['<c-x>', '<c-s>'],
-       \ 'AcceptSelection("t")': ['<c-t>', '<c-cr>'],
-       \ }
+let g:ctrlp_prompt_mappings = {
+      \ 'AcceptSelection("h")': ['<c-x>', '<c-s>'],
+      \ 'AcceptSelection("t")': ['<c-t>', '<c-cr>'],
+      \ }
 
 " ---------------
 " Gundo
@@ -93,38 +93,38 @@ let g:tagbar_width=40
 
 " add a definition for Objective-C to tagbar
 let g:tagbar_type_objc = {
-    \ 'ctagstype' : 'ObjectiveC',
-    \ 'kinds'     : [
-        \ 'i:interface',
-        \ 'I:implementation',
-        \ 'p:Protocol',
-        \ 'm:Object_method',
-        \ 'c:Class_method',
-        \ 'v:Global_variable',
-        \ 'F:Object field',
-        \ 'f:function',
-        \ 'p:property',
-        \ 't:type_alias',
-        \ 's:type_structure',
-        \ 'e:enumeration',
-        \ 'M:preprocessor_macro',
-    \ ],
-    \ 'sro'        : ' ',
-    \ 'kind2scope' : {
-        \ 'i' : 'interface',
-        \ 'I' : 'implementation',
-        \ 'p' : 'Protocol',
-        \ 's' : 'type_structure',
-        \ 'e' : 'enumeration'
-    \ },
-    \ 'scope2kind' : {
-        \ 'interface'      : 'i',
-        \ 'implementation' : 'I',
-        \ 'Protocol'       : 'p',
-        \ 'type_structure' : 's',
-        \ 'enumeration'    : 'e'
-    \ }
-\ }
+      \ 'ctagstype' : 'ObjectiveC',
+      \ 'kinds'     : [
+      \ 'i:interface',
+      \ 'I:implementation',
+      \ 'p:Protocol',
+      \ 'm:Object_method',
+      \ 'c:Class_method',
+      \ 'v:Global_variable',
+      \ 'F:Object field',
+      \ 'f:function',
+      \ 'p:property',
+      \ 't:type_alias',
+      \ 's:type_structure',
+      \ 'e:enumeration',
+      \ 'M:preprocessor_macro',
+      \ ],
+      \ 'sro'        : ' ',
+      \ 'kind2scope' : {
+      \ 'i' : 'interface',
+      \ 'I' : 'implementation',
+      \ 'p' : 'Protocol',
+      \ 's' : 'type_structure',
+      \ 'e' : 'enumeration'
+      \ },
+      \ 'scope2kind' : {
+      \ 'interface'      : 'i',
+      \ 'implementation' : 'I',
+      \ 'Protocol'       : 'p',
+      \ 'type_structure' : 's',
+      \ 'enumeration'    : 'e'
+      \ }
+      \ }
 
 " delimitMate
 let delimitMate_expand_cr = 1
