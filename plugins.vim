@@ -128,3 +128,9 @@ let g:tagbar_type_objc = {
 
 " delimitMate
 let delimitMate_expand_cr = 1
+
+" VimClojure
+let g:vimclojure#ParenRainbow = 1
+
+" ACK
+let g:ackprg = 'ag --nogroup --nocolor --column'
