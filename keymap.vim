@@ -1,4 +1,5 @@
 let mapleader=","
+noremap \ ,
 
 "Go to last edit location with ,.
 nnoremap ,. '.
