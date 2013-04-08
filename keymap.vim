@@ -1,6 +1,9 @@
 let mapleader=","
 noremap \ ,
 
+" use jk to exit insert mode
+inoremap jk <Esc>
+
 "Go to last edit location with ,.
 nnoremap ,. '.
 

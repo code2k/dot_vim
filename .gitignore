@@ -1,2 +1,11 @@
 bundle/
 vimrc.test
+
+### /Users/andreas/.gitignore-boilerplates/Global/vim.gitignore
+
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
