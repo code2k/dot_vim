@@ -19,11 +19,17 @@ map <Up> gk
 nnoremap <silent> <leader>< :bp<CR>
 nnoremap <silent> <leader>> :bn<CR>
 
-" ctrl-opt- left/right for tab movement
-nnoremap <silent> <D-A-Left> :tabp<cr>
-inoremap <silent> <D-A-Left> <esc>:tabp<cr>
-nnoremap <silent> <D-A-Right> :tabn<cr>
-inoremap <silent> <D-A-Right> <esc>:tabn<cr>
+" meta-opt- left/right for tab movement
+nnoremap <silent> <D-A-Left> gT
+inoremap <silent> <D-A-Left> <esc>gT
+nnoremap <silent> <D-A-Right> gt
+inoremap <silent> <D-A-Right> <esc>gt
+
+" meta j/k for tab movement
+nnoremap <silent> <D-j> gT
+inoremap <silent> <D-j> <esc>gT
+nnoremap <silent> <D-k> gt
+inoremap <silent> <D-k> <esc>gt
 
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
