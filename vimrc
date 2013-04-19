@@ -28,7 +28,7 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'rbgrouleff/bclose.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'christoomey/vim-space'
-Bundle 'tpope/vim-unimpaired'
+"Bundle 'tpope/vim-unimpaired'
 Bundle 'edsono/vim-matchit'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-surround'
@@ -41,7 +41,7 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/snipmate-snippets'
 Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neocomplcache-snippets-complete'
+"Bundle 'Shougo/neosnippet'
 
 Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
@@ -49,6 +49,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-rake'
 Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'beatlog/vim-gocode'
 Bundle 'othree/html5.vim'
@@ -177,6 +178,8 @@ set timeoutlen=500     " Time to wait for a command (after leader for example)
 set foldlevelstart=99  " Remove folds
 set formatoptions=crql
 set iskeyword+=$,@     " Add extra characters that are valid parts of variables
+set splitbelow
+set splitright
 
 " ---------------
 " Text Format
