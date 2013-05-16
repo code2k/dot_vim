@@ -39,7 +39,7 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'godlygeek/tabular'
 Bundle 'gregsexton/MatchTag'
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neosnippet'
 

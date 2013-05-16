@@ -39,7 +39,7 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 - [tabular](https://github.com/godlygeek/tabular)
 - [MatchTag](https://github.com/gregsexton/MatchTag)
 - [vim-snipmate](https://github.com/garbas/vim-snipmate)
-- [snipmate-snippets](https://github.com/honza/snipmate-snippets)
+- [vim-snippets](https://github.com/honza/vim-snippets)
 - [neocomplcache](https://github.com/Shougo/neocomplcache)
 - [vim-markdown](https://github.com/hallison/vim-markdown)
 - [vim-ruby](https://github.com/vim-ruby/vim-ruby)
