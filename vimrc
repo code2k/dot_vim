@@ -305,7 +305,7 @@ if has("autocmd")
   autocmd BufWritePre *.c,*.cpp,*.h,*.m,*.mm,*.java,*.go,*.py,*.js,*.rb: silent! :StripTrailingWhitespaces
 
   " If the only cmdline argument is a directory, change into it at start
-  autocmd VimEnter * if argc() == 1 && isdirectory(argv(0)) | exe "silent! cd ".argv(0) | endif
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv(0)) | exe "silent! cd ".argv(0)."|Explore" | endif
 
   " if rvm configuration exists, change used ruby and gemset using Rvm
   autocmd VimEnter * if filereadable(expand("./.rvmrc")) | Rvm | endif
