@@ -44,7 +44,6 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-rake'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
@@ -305,8 +304,6 @@ if has("autocmd")
   " If the only cmdline argument is a directory, change into it at start
   autocmd VimEnter * if argc() == 1 && isdirectory(argv(0)) | exe "silent! cd ".argv(0)."|Explore" | endif
 
-  " if rvm configuration exists, change used ruby and gemset using Rvm
-  autocmd VimEnter * if filereadable(expand("./.rvmrc")) | Rvm | endif
 endif
 
 exe 'source ~/.vim/plugins.vim'
