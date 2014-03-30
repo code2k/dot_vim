@@ -18,7 +18,7 @@ Bundle 'tomtom/tlib_vim.git'
 Bundle 'kana/vim-textobj-user'
 Bundle 'tpope/vim-eunuch'
 
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'henrik/vim-indexed-search'
 Bundle 'milkypostman/vim-togglelist'
