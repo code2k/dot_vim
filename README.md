@@ -28,6 +28,7 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 - [ZoomWin](https://github.com/vim-scripts/ZoomWin)
 - [bclose.vim](https://github.com/rbgrouleff/bclose.vim)
 - [vim-repeat](https://github.com/tpope/vim-repeat)
+- [vim-exchange](https://github.com/tommcdo/vim-exchange)
 - [vim-space](https://github.com/christoomey/vim-space)
 - [vim-matchit](https://github.com/edsono/vim-matchit)
 - [delimitMate](https://github.com/Raimondi/delimitMate)
