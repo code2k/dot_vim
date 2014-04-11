@@ -13,8 +13,8 @@ cmap bd Bclose
 " ---------------
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\/log$\|\/output$\|\/build$\|\/node[-_]modules$\|\.git$\|\.hg$\|\.svn$',
-      \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$',
+      \ 'dir':  '\/target$\|\/log$\|\/output$\|\/build$\|\/node[-_]modules$\|\.git$\|\.hg$\|\.svn$',
+      \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$\|\.ico$',
       \ }
 let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("h")': ['<c-x>', '<c-s>'],
@@ -33,12 +33,12 @@ let g:gundo_width = 40
 " syntastic
 " ---------------
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warnings'}
+"let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_auto_loc_list=2
 
+" ---------------
 " neocomplcache
-" A beter autocomplete system!
-
+" ---------------
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 0

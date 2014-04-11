@@ -17,6 +17,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils.git'
 Bundle 'tomtom/tlib_vim.git'
 Bundle 'kana/vim-textobj-user'
 Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-unimpaired'
 
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
@@ -38,9 +39,9 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'godlygeek/tabular'
 Bundle 'gregsexton/MatchTag'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
 Bundle 'Shougo/neocomplcache'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 
 Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
@@ -48,8 +49,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rake'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'beatlog/vim-gocode'
+Bundle 'fatih/vim-go'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -285,8 +285,8 @@ if has("autocmd")
   " Make sure all mardown files have the correct filetype set and setup wrapping
   au BufRead,BufNewFile *.txt,*.md,*.markdown,*.mdown,*.mkd,*.mkdn,*.txt setf markdown | call s:setupWrapping()
 
-  " Treat JSON files like JavaScript
-  au BufNewFile,BufRead *.json set ft=javascript
+  "" GoLag settings
+  autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 nolist
 
   " No formatting on o key newlines
   autocmd BufNewFile,BufEnter * set formatoptions-=o
