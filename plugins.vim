@@ -12,10 +12,12 @@ cmap bd Bclose
 " CtrlP
 " ---------------
 let g:ctrlp_working_path_mode = 'rc'
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\/target$\|\/log$\|\/output$\|\/build$\|\/node[-_]modules$\|\.git$\|\.hg$\|\.svn$',
-      \ 'file': '\.o$\|\.class$\|\.exe$\|\.so$\|\.dll$\|\.ico$',
-      \ }
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+                                                       \ --ignore .git
+                                                       \ --ignore .svn
+                                                       \ --ignore .hg
+                                                       \ --ignore .DS_Store
+                                                       \ -g ""'
 let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("h")': ['<c-x>', '<c-s>'],
       \ 'AcceptSelection("t")': ['<c-t>', '<c-cr>'],
