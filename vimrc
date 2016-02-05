@@ -21,7 +21,7 @@ Bundle 'tpope/vim-unimpaired'
 
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'henrik/vim-indexed-search'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'majutsushi/tagbar'
