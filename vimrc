@@ -286,7 +286,10 @@ if has("autocmd")
   " Make sure all mardown files have the correct filetype set and setup wrapping
   au BufRead,BufNewFile *.txt,*.md,*.markdown,*.mdown,*.mkd,*.mkdn,*.txt setf markdown | call s:setupWrapping()
 
-  "" GoLag settings
+  " Enable wrapping for asciidoc(tor) files
+  au BufRead,BufNewFile *.adoc call s:setupWrapping()
+
+  " GoLag settings
   autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 nolist
 
   " No formatting on o key newlines
