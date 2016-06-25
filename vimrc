@@ -18,6 +18,7 @@ Bundle 'tomtom/tlib_vim.git'
 Bundle 'kana/vim-textobj-user'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-vinegar'
 
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
