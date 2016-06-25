@@ -42,7 +42,11 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'godlygeek/tabular'
 Bundle 'gregsexton/MatchTag'
 Bundle 'Shougo/neocomplcache'
-Bundle 'SirVer/ultisnips'
+if has('python')
+  Bundle 'SirVer/ultisnips'
+else
+  Bundle 'garbas/vim-snipmate'
+endif
 Bundle 'honza/vim-snippets'
 
 Bundle 'hallison/vim-markdown'
