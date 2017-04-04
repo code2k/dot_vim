@@ -32,7 +32,6 @@ Bundle 'rbgrouleff/bclose.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tommcdo/vim-exchange'
 Bundle 'christoomey/vim-space'
-Bundle 'edsono/vim-matchit'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-surround'
 Bundle 'mileszs/ack.vim'
@@ -70,6 +69,8 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'msanders/cocoa.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-indent'
+
+packadd! matchit
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
