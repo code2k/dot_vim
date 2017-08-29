@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "Installing vundle"
-git clone https://github.com/gmarik/vundle.git bundle/vundle
+echo "Installing vim-plug"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Symlink vim config"
 ln -sf ~/.vim/vimrc ~/.vimrc
 ln -sf ~/.vim/gvimrc ~/.gvimrc
 
-echo "Initialize vim"
-vim +BundleInstall +qall
+cho "Initialize vim"
+vim +PlugInstall +qall
+

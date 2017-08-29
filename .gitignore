@@ -1,4 +1,6 @@
-bundle/
+autoload/
+plugged/
+UltiSnips/
 vimrc.test
 
 ### /Users/andreas/.gitignore-boilerplates/Global/vim.gitignore

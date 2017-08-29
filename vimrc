@@ -1,76 +1,45 @@
-" ----------------------------------------
-" Vundle
-" ----------------------------------------
+"" Plugins
 
-set nocompatible " be iMproved
-filetype off     " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'sjl/vitality.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils.git'
-Bundle 'tomtom/tlib_vim.git'
-Bundle 'kana/vim-textobj-user'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-vinegar'
-
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'henrik/vim-indexed-search'
-Bundle 'milkypostman/vim-togglelist'
-Bundle 'sjl/gundo.vim'
-Bundle 'vim-scripts/ZoomWin'
-Bundle 'tpope/vim-repeat'
-Bundle 'tommcdo/vim-exchange'
-Bundle 'spiiph/vim-space'
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-surround'
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'godlygeek/tabular'
-Bundle 'gregsexton/MatchTag'
-Bundle 'Shougo/neocomplcache'
-if has('python')
-  Bundle 'SirVer/ultisnips'
+"" Installation with VimPlug
+if has("win32")
+  call plug#begin('~/vimfiles/plugged')
 else
-  Bundle 'garbas/vim-snipmate'
+  call plug#begin('~/.vim/plugged')
 endif
-Bundle 'honza/vim-snippets'
 
-Bundle 'hallison/vim-markdown'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rake'
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
-Bundle 'fatih/vim-go'
-Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nono/vim-handlebars'
-Bundle 'mmalecki/vim-node.js'
-Bundle 'leshill/vim-json'
-Bundle 'mattn/emmet-vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'skammer/vim-css-color'
-Bundle 'groenewege/vim-less'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'msanders/cocoa.vim'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'kana/vim-textobj-indent'
+Plug 'tpope/vim-sensible'
+Plug 'sheerun/vim-polyglot'
+Plug 'flazz/vim-colorschemes'
 
-packadd! matchit
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
 
-filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/neocomplcache'
+Plug 'godlygeek/tabular'
+Plug 'henrik/vim-indexed-search'
+Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/syntastic'
+Plug 'sirver/ultisnips'
+Plug 'sjl/gundo.vim'
+Plug 'spiiph/vim-space'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/ZoomWin'
+
+call plug#end()
+
+syntax on
+filetype plugin indent on
 
 " ---------------
 " no swap/backup
