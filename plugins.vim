@@ -23,6 +23,19 @@ let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("t")': ['<c-t>', '<c-cr>'],
       \ }
 
+let g:ctrlp_map = ''
+nnoremap <C-p> :CtrlP<CR>
+inoremap <C-p> <esc>:CtrlP<CR>
+
+nnoremap <C-b> :CtrlPBuffer<CR>
+inoremap <C-b> <esc>:CtrlPBuffer<CR>
+
+nnoremap <C-l> :CtrlPMRUFiles<CR>
+inoremap <C-l> <esc>:CtrlPMRUFiles<CR>
+
+nnoremap <C-t> :CtrlPBufTag<CR>
+inoremap <C-t> <esc>:CtrlPBufTag<CR>
+
 " ---------------
 " Gundo
 " ---------------
@@ -31,9 +44,12 @@ let g:gundo_right = 1
 " a little wider for wider screens
 let g:gundo_width = 40
 
+nnoremap ,u :GundoToggle<CR>
+
 " ---------------
 " syntastic
 " ---------------
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_enable_signs=1
 "let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_auto_loc_list=2
@@ -83,47 +99,53 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.go = '\h\w*\%.'
 let g:neocomplcache_omni_patterns.less = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
 
+" neocomplcache activation
+inoremap <expr> <c-space> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>"
+inoremap <expr><c-CR> neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+
 "---------------
-"Tagbar
-let g:tagbar_width=40
+" Surround
+"---------------
+map <leader># Surround a word with #{ruby interpolation}
+map <leader># ysiw#
+vmap <leader># c#{<C-R>"}<ESC>
 
-" add a definition for Objective-C to tagbar
-let g:tagbar_type_objc = {
-      \ 'ctagstype' : 'ObjectiveC',
-      \ 'kinds'     : [
-      \ 'i:interface',
-      \ 'I:implementation',
-      \ 'p:Protocol',
-      \ 'm:Object_method',
-      \ 'c:Class_method',
-      \ 'v:Global_variable',
-      \ 'F:Object field',
-      \ 'f:function',
-      \ 'p:property',
-      \ 't:type_alias',
-      \ 's:type_structure',
-      \ 'e:enumeration',
-      \ 'M:preprocessor_macro',
-      \ ],
-      \ 'sro'        : ' ',
-      \ 'kind2scope' : {
-      \ 'i' : 'interface',
-      \ 'I' : 'implementation',
-      \ 'p' : 'Protocol',
-      \ 's' : 'type_structure',
-      \ 'e' : 'enumeration'
-      \ },
-      \ 'scope2kind' : {
-      \ 'interface'      : 'i',
-      \ 'implementation' : 'I',
-      \ 'Protocol'       : 'p',
-      \ 'type_structure' : 's',
-      \ 'enumeration'    : 'e'
-      \ }
-      \ }
+" <leader>" Surround a word with "quotes"
+map <leader>" ysiw"
+vmap <leader>" c"<C-R>""<ESC>
 
+" <leader>' Surround a word with 'single quotes'
+map <leader>' ysiw'
+vmap <leader>' c'<C-R>"'<ESC>
+
+" <leader>) or <leader>( Surround a word with (parens)
+" The difference is in whether a space is put in
+map <leader>( ysiw(
+map <leader>) ysiw)
+vmap <leader>( c( <C-R>" )<ESC>
+vmap <leader>) c(<C-R>")<ESC>
+
+" <leader>[ Surround a word with [brackets]
+map <leader>] ysiw]
+map <leader>[ ysiw[
+vmap <leader>[ c[ <C-R>" ]<ESC>
+vmap <leader>] c[<C-R>"]<ESC>
+
+" <leader>{ Surround a word with {braces}
+map <leader>} ysiw}
+map <leader>{ ysiw{
+vmap <leader>} c{ <C-R>" }<ESC>
+vmap <leader>{ c{<C-R>"}<ESC>
+
+
+"---------------
 " delimitMate
+"---------------
 let delimitMate_expand_cr = 1
 
+"---------------
 " ACK
+"---------------
 let g:ackprg = 'ag --nogroup --nocolor --column'

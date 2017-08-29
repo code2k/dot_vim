@@ -25,10 +25,8 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'henrik/vim-indexed-search'
 Bundle 'milkypostman/vim-togglelist'
-Bundle 'majutsushi/tagbar'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/ZoomWin'
-Bundle 'rbgrouleff/bclose.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tommcdo/vim-exchange'
 Bundle 'spiiph/vim-space'
@@ -73,45 +71,6 @@ Bundle 'kana/vim-textobj-indent'
 packadd! matchit
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
-
-" ----------------------------------------
-" Platform Specific Configuration
-" ----------------------------------------
-
-if has('win32') || has('win64')
-  " Windows
-  source $VIMRUNTIME/mswin.vim
-  set guifont=Consolas:h10
-  set guioptions-=T " Toolbar
-  set guioptions-=m " Menubar
-
-  " Set height and width on Windows
-  set lines=55
-  set columns=130
-
-  " Windows has a nasty habit of launching gVim in the wrong working directory
-  cd ~
-elseif has('gui_macvim') && has('gui_running')
-  " MacVim
-
-  " Custom font for Powerline
-  " From: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
-
-  " Hide Toolbar in MacVim
-  set guioptions=egmt
-
-  set lines=60
-  set columns=140
-
-  " Use option (alt) as meta key.
-  "set macmeta
-
-  if has("autocmd")
-    " Automatically resize splits when resizing MacVim window
-    autocmd VimResized * wincmd =
-  endif
-endif
 
 " ---------------
 " no swap/backup
@@ -207,7 +166,6 @@ set ignorecase " Case insensitive search
 set smartcase  " Non-case sensitive search
 set incsearch
 set hlsearch
-set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,.sass-cache,*.class,*.scssc
 
 " ---------------
 " Visual
@@ -233,9 +191,9 @@ set complete=.,w,b,u,U
 
 " ================ Completion =======================
 
-set wildmode=list:longest,full
+set wildmode=longest,full
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,.sass-cache,*.class,*.scssc
 set wildignore+=*/vim/backups*
 set wildignore+=*/DS_Store*
 set wildignore+=*.gem
@@ -246,10 +204,6 @@ set wildignore+=*.png,*.jpg,*.gif
 set scrolloff=4         "Start scrolling when we're 4 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
-" use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
-" (it will prompt for sudo password when writing)
-cmap w!! SudoWrite
 
 " ----------------------------------------
 " Remove Trailing Whitespaces
@@ -310,15 +264,83 @@ if has("autocmd")
     \| exe "normal! g`\"" | endif
 
   " Fix trailing whitespace in my most used programming langauges
-  autocmd BufWritePre *.c,*.cpp,*.h,*.m,*.mm,*.java,*.go,*.py,*.js,*.rb: silent! :StripTrailingWhitespaces
+  autocmd BufWritePre *.c,*.cpp,*.h,*.m,*.mm,*.swift,*.java,*.go,*.py,*.js,*.rb,*.scss,*.less: silent! :StripTrailingWhitespaces
 
   " If the only cmdline argument is a directory, change into it at start
   autocmd VimEnter * if argc() == 1 && isdirectory(argv(0)) | exe "silent! cd ".argv(0)."|Explore" | endif
 
 endif
 
+" ----------------------------------------
+" General Key mappings
+" ----------------------------------------
+
+let mapleader=","
+noremap \ ,
+
+" use jk to exit insert mode
+inoremap jk <Esc>
+
+" Map the arrow keys to be based on display lines, not physical lines
+map <Down> gj
+map <Up> gk
+
+" buffer next/previous
+nnoremap <silent> <leader>< :bp<CR>
+nnoremap <silent> <leader>> :bn<CR>
+
+" meta-opt- left/right for tab movement
+nnoremap <silent> <D-A-Left> gT
+inoremap <silent> <D-A-Left> <esc>gT
+nnoremap <silent> <D-A-Right> gt
+inoremap <silent> <D-A-Right> <esc>gt
+
+" meta j/k for tab movement
+nnoremap <silent> <D-j> gT
+inoremap <silent> <D-j> <esc>gT
+nnoremap <silent> <D-k> gt
+inoremap <silent> <D-k> <esc>gt
+
+" Create window splits easier. The default
+" way is Ctrl-w,v and Ctrl-w,s. I remap
+" this to vv and ss
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
+
+" Easy close windows with Q
+nnoremap <silent> Q <C-w>c
+
+nnoremap <leader>w :StripTrailingWhitespaces<CR>
+" reindent complete file without losing position
+nnoremap <leader>f mqHmwgg=G`wzt`q
+
+"Clear current search highlight by double tapping //
+nnoremap <silent> // :nohlsearch<CR>
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+nmap <C-k> [e
+nmap <C-j> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
+" Zoom Window to Full Size
+nnoremap <silent> <leader>z :ZoomWin<CR>
+
+"---------------
+"  External plugin config
+"---------------
+
 exe 'source ~/.vim/plugins.vim'
-exe 'source ~/.vim/keymap.vim'
+
+"---------------
+"  Local config
+"---------------
 
 " Use local vimrc if available
 if filereadable(expand("~/.vimrc.local"))
