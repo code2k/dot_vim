@@ -7,6 +7,8 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+let g:plug_window="enew"
+
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'flazz/vim-colorschemes'
