@@ -43,7 +43,9 @@ inoremap <C-t> <esc>:CtrlPBufTag<CR>
 let g:gundo_right = 1
 " a little wider for wider screens
 let g:gundo_width = 40
-let g:gundo_prefer_python3 = 1
+if has('python3')
+  let g:gundo_prefer_python3 = 1
+endif
 
 nnoremap ,u :GundoToggle<CR>
 
