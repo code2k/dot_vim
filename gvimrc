@@ -9,7 +9,7 @@ set guicursor+=a:blinkon0 " Turn off blinking cursor
 if has("win32") || has('win64')
   set guifont=Consolas:h12
 else
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif
 
 if has("autocmd")
@@ -19,3 +19,5 @@ endif
 
 set lines=60
 set columns=140
+
+set mousemodel=popup
