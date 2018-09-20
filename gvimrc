@@ -6,10 +6,15 @@ set guioptions-=L " Turn off left-hand scrollbar
 set guioptions-=l " Turn off left-hand=scrollbar when split
 set guicursor+=a:blinkon0 " Turn off blinking cursor
 
-if has("win32") || has('win64')
-  set guifont=Consolas:h12
-else
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+if has("gui_running")
+  if has("win32") || has('win64')
+    set guifont=Consolas:h12
+  elseif has("gui_macvim")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+  else
+    " assume Linux
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+  endif
 endif
 
 if has("autocmd")
