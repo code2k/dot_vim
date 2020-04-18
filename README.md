@@ -14,7 +14,7 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 
 - [vim-sensible](https://github.com/tpope/vim-sensible)
 - [vim-polyglot](https://github.com/sheerun/vim-polyglot)
-- [vim-colorschemes](https://github.com/flazz/vim-colorschemes)
+- [vim-solarized8](https://github.com/lifepillar/vim-solarized8)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)

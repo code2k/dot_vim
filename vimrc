@@ -1,6 +1,11 @@
-"" Plugins
+" vim-plug setup
 
-"" Installation with VimPlug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 if has("win32")
   call plug#begin('~/vimfiles/plugged')
 else
@@ -11,7 +16,7 @@ let g:plug_window="enew"
 
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
-Plug 'flazz/vim-colorschemes'
+Plug 'lifepillar/vim-solarized8'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -53,15 +58,12 @@ set nowb
 " ---------------
 " Color
 " ---------------
-set t_Co=256
-if has('gui_running')
-  let g:solarized_termcolors=256
-else
-  let g:solarized_termcolors=16
+if !has('gui_running')
+  set t_Co=16
 endif
-colorscheme solarized
-let g:solarized_contrast="high"
-let g:solarized_visibility="normal"
+set background=light
+let g:solarized_old_cursor_style=1
+colorscheme solarized8
 
 " ---------------
 " UI
@@ -76,37 +78,14 @@ set encoding=utf-8
 set cursorline
 let g:netrw_liststyle = 3 " tree
 
-function! <SID>setupColors()
-  hi! link txtBold Identifier
-  hi! link zshVariableDef Identifier
-  hi! link zshFunction Function
-  hi! link rubyControl Statement
-  hi! link rspecGroupMethods rubyControl
-  hi! link rspecMocks Identifier
-  hi! link rspecKeywords Identifier
-  hi! link rubyLocalVariableOrMethod Normal
-  hi! link rubyStringDelimiter Constant
-  hi! link rubyString Constant
-  hi! link rubyAccess Todo
-  hi! link rubySymbol Identifier
-  hi! link rubyPseudoVariable Type
-  hi! link rubyRailsARAssociationMethod Title
-  hi! link rubyRailsARValidationMethod Title
-  hi! link rubyRailsMethod Title
-  hi! link MatchParen DiffText
-  hi! link WildMenu DiffText
-endfunction
-autocmd VimEnter * call <SID>setupColors()
-
 " ---------------
 " Behaviors
 " ---------------
-syntax enable
 set autoread           " Automatically reload changes if detected
 set hidden             " Change buffer - without saving
 set history=768        " Number of things to remember in history.
 set cf                 " Enable error files & error jumping.
-"set clipboard+=unnamed " Yanks go on clipboard instead.
+" set clipboard+=unnamed " Yanks go on clipboard instead.
 set autowrite          " Writes on make/shell commands
 set timeoutlen=500     " Time to wait for a command (after leader for example)
 set foldlevelstart=99  " Remove folds
@@ -181,15 +160,15 @@ set sidescroll=1
 " via: http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
 
@@ -231,7 +210,7 @@ if has("autocmd")
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g`\"" | endif
+        \| exe "normal! g`\"" | endif
 
   " Fix trailing whitespace in my most used programming langauges
   autocmd BufWritePre *.c,*.cpp,*.h,*.m,*.mm,*.swift,*.java,*.go,*.py,*.js,*.rb,*.scss,*.less: silent! :StripTrailingWhitespaces
