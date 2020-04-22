@@ -1,0 +1,16 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "jascriptreact",
+    "javascript",
+    "json",
+    "markdown",
+    "typescript",
+    "typescriptreact"
+  ],
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
+  }
+}
+

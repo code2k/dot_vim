@@ -21,20 +21,21 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neocomplcache'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-entire'
+Plug 'terryma/vim-expand-region'
+
 Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/syntastic'
-Plug 'sirver/ultisnips'
 Plug 'sjl/gundo.vim'
-Plug 'spiiph/vim-space'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -134,9 +135,6 @@ set t_vb=
 " ---------------
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
-
-" Better complete options to speed it up
-set complete=.,w,b,u,U
 
 " ================ Completion =======================
 

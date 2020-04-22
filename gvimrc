@@ -22,7 +22,8 @@ if has("autocmd")
   autocmd VimResized * wincmd =
 endif
 
-set lines=60
+set linespace=1
+set lines=56
 set columns=140
 
 set mousemodel=popup

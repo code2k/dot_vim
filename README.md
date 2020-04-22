@@ -5,7 +5,8 @@
 1. `git clone http://github.com/code2k/dot_vim.git .vim` into your home
    folder.
 2. `cd .vim`
-3. `./bootstap.sh` (ignore the initial vim error)
+3. `./bootstap.sh`
+4. Vim plugins will be installed on the first start.
 
 If you need to modify this configuration just add a `.vimrc.local` and/or
 `.gvimrc.local` in your home directory.
@@ -18,19 +19,19 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 - [vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
-- [delimitMate](https://github.com/Raimondi/delimitMate)
-- [neocomplcache](https://github.com/Shougo/neocomplcache)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [vim-textobj-user](https://github.com/kana/vim-textobj-user)
+- [vim-textobj-indent](https://github.com/kana/vim-textobj-indent)
+- [vim-textobj-line](https://github.com/kana/vim-textobj-line)
+- [vim-textobj-entire](https://github.com/kana/vim-textobj-entire)
+- [vim-expand-region](https://github.com/terryma/vim-expand-region)
 - [tabular](https://github.com/godlygeek/tabular)
 - [vim-indexed-search](https://github.com/henrik/vim-indexed-search)
 - [vim-snippets](https://github.com/honza/vim-snippets)
 - [emmet-vim](https://github.com/mattn/emmet-vim)
 - [ack.vim](https://github.com/mileszs/ack.vim)
-- [syntastic](https://github.com/scrooloose/syntastic)
-- [ultisnips](https://github.com/sirver/ultisnips)
 - [gundo.vim](https://github.com/sjl/gundo.vim)
-- [vim-space](https://github.com/spiiph/vim-space)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
-- [vim-endwise](https://github.com/tpope/vim-endwise)
 - [vim-eunuch](https://github.com/tpope/vim-eunuch)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [vim-repeat](https://github.com/tpope/vim-repeat)
@@ -38,6 +39,16 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
 - [vim-vinegar](https://github.com/tpope/vim-vinegar)
 - [ZoomWin](https://github.com/vim-scripts/ZoomWin)
+
+## coc.nvim
+
+Initially there are only a few essential coc.nvim extensions installed.
+
+For a better more VSCode like experience, install the following extensions:
+
+```
+:CocInstall coc-css coc-eslint coc-html coc-json coc-prettier coc-tailwindcss coc-tsserver coc-tslint-plugin coc-yaml
+```
 
 ## Credits
 
