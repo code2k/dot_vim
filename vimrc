@@ -72,10 +72,17 @@ set nu             " Line numbers on
 set wrap           " Line wrapping on
 set laststatus=2   " Always show the statusline
 set cmdheight=2    " Make the command area two lines high
-set gcr=a:blinkon0              "Disable cursor blink
 set encoding=utf-8
 set cursorline
 let g:netrw_liststyle = 3 " tree
+
+" ---------------
+" Cursor shapes
+" ---------------
+" set gcr=a:blinkon0              "Disable cursor blink
+let &t_SI = "\<esc>[6 q"
+let &t_SR = "\<esc>[6 q"
+let &t_EI = "\<esc>[2 q"
 
 " ---------------
 " Behaviors
