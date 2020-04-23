@@ -59,10 +59,8 @@ set nowb
 " ---------------
 " Color
 " ---------------
-if !has('gui_running')
-  set t_Co=16
-endif
 set background=light
+set termguicolors
 let g:solarized_old_cursor_style=1
 colorscheme solarized8
 
