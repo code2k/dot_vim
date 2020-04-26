@@ -1,5 +1,6 @@
 autoload/
 plugged/
+session/
 UltiSnips/
 vimrc.test
 

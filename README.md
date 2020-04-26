@@ -20,6 +20,7 @@ If you need to modify this configuration just add a `.vimrc.local` and/or
 - [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [vim-startify](https://github.com/mhinz/vim-startify)
 - [vim-textobj-user](https://github.com/kana/vim-textobj-user)
 - [vim-textobj-indent](https://github.com/kana/vim-textobj-indent)
 - [vim-textobj-line](https://github.com/kana/vim-textobj-line)
