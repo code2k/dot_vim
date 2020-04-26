@@ -150,12 +150,15 @@ let g:airline_powerline_fonts=1
 " CtrlP
 " ---------------
 let g:ctrlp_working_path_mode = 'rc'
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-                                                       \ --ignore .git
-                                                       \ --ignore .svn
-                                                       \ --ignore .hg
-                                                       \ --ignore .DS_Store
-                                                       \ -g ""'
+if executable('ag')
+  let g:ctrlp_user_command = '[[ $PWD == $HOME ]] && echo "Blocked in $HOME!" ||
+        \ ag %s -i --nocolor --nogroup --hidden
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore .hg
+        \ --ignore .DS_Store
+        \ -g ""'
+endif
 let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("h")': ['<c-x>', '<c-s>'],
       \ 'AcceptSelection("t")': ['<c-t>', '<c-cr>'],
