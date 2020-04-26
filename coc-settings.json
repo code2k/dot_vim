@@ -11,6 +11,6 @@
   ],
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck"
-  }
+  },
+  "tailwindCSS.headwind.runOnSave": false
 }
-
