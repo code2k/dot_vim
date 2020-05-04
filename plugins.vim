@@ -243,4 +243,8 @@ vmap <leader>{ c{<C-R>"}<ESC>
 "---------------
 " ACK
 "---------------
-let g:ackprg = 'ag --nogroup --nocolor --column'
+if executable("rg")
+  let g:ackprg = 'rg --vimgrep'
+elseif executable("ag")
+  let g:ackprg = 'ag --vimgrep'
+endif
