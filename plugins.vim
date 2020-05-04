@@ -150,9 +150,17 @@ let g:airline_powerline_fonts=1
 " CtrlP
 " ---------------
 let g:ctrlp_working_path_mode = 'rc'
-if executable('ag')
-  let g:ctrlp_user_command = '[[ $PWD == $HOME ]] && echo "Blocked in $HOME!" ||
-        \ ag %s -i --nocolor --nogroup --hidden
+
+let ctrlpFailSafe = '[[ $PWD == $HOME ]] && echo "Blocked in $HOME!" || '
+
+if executable('fd')
+  let g:ctrlp_user_command = ctrlpFailSafe . 'fd --type file --color never "" %s'
+elseif executable('fdfind')
+  let g:ctrlp_user_command = ctrlpFailSafe . 'fdfind --type file --color never "" %s'
+elseif executable('rg')
+  let g:ctrlp_user_command = ctrlpFailSafe . 'rg %s --files --color never --glob ""'
+elseif executable('ag')
+  let g:ctrlp_user_command = ctrlpFailSafe . 'ag %s -i --nocolor --nogroup --hidden
         \ --ignore .git
         \ --ignore .svn
         \ --ignore .hg
